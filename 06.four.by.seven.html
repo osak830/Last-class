@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four By Seven</title>
+</head>
+<body>
+
+    <canvas id="sketch" width="600" height="600"></canvas>
+
+    <script>
+        var sketch = document.getElementById("sketch");
+        var context = sketch.getContext("2d");
+
+        context.fillStyle = "#87D8F7"; //lazio blue
+
+        for (var r = 1; r <= 7; r++) {
+            // this is the outer for loop (creates the vertical dimension; the # of rows)
+
+            for (var c = 1; c <= 4; c++) {
+                // the inner loop; its the rows; horizontal dimension; the items in a single row
+                context.beginPath();
+                context.arc((c * 50), (r *50), 20, 0, 2 * Math.PI, true);
+                    // use r to define the y values; used as a constant in each row
+                context.closePath();
+                context.fill();
+            }
+        }
+    </script>
+
+</body>
+</html>
